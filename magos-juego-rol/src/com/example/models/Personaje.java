@@ -12,28 +12,13 @@ public abstract class Personaje {
     private int vidaMaxima;
     private int vidaActual;
 
-    public Personaje(String nombre, TipoRaza raza, int fuerza, int inteligencia, int vidaMaxima, int vidaActual) {
-        this.nombre = nombre;
-        if (raza == null) {
-            throw new RuntimeException("Debe especificar la raza del personaje");
-        }
-        this.raza = raza;
-        if (fuerza < 0 || fuerza > 20) {
-            throw new RuntimeException("La fuerza debe establecerse entre [0 - 20]");
-        }
-        this.fuerza = fuerza;
-        if (inteligencia < 0 || inteligencia > 20) {
-            throw new RuntimeException("la inteligencia debe establecerse entre [0 - 20]");
-        }
-        this.inteligencia = inteligencia;
-        if (vidaMaxima < 0 || vidaMaxima > 100) {
-            throw new RuntimeException("la vida máxima debe establecerse entre [0 - 100]");
-        }
-        this.vidaMaxima = vidaMaxima;
-        if (vidaActual < 0 || vidaActual > vidaMaxima) {
-            throw new RuntimeException("Incoherencia!! La vida actual no puede superar la vida Máxima");
-        }
-        this.vidaActual = vidaActual;
+    public Personaje(String nombre, TipoRaza raza, int fuerza, int inteligencia, int vidaMaxima, int vidaActual) throws JuegoException {
+        setNombre(nombre);
+        setRaza(raza);
+        setFuerza(fuerza);
+        setInteligencia(inteligencia);
+        setVidaMaxima(vidaMaxima);
+        setVidaActual(vidaActual);
     }
 
     public String getNombre() {
@@ -56,7 +41,11 @@ public abstract class Personaje {
         return raza;
     }
 
-    public void setRaza(TipoRaza raza) {
+    public void setRaza(TipoRaza raza) throws JuegoException{
+        if(raza == null){
+            throw new JuegoException("Debe asignar una raza al personaje");
+        }
+
         this.raza = raza;
     }
 
