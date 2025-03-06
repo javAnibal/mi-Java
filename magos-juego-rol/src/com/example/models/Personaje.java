@@ -1,6 +1,7 @@
 package com.example.models;
 
 import com.example.enums.TipoRaza;
+import com.example.utils.JuegoException;
 
 public abstract class Personaje {
 
@@ -29,7 +30,7 @@ public abstract class Personaje {
             throw new RuntimeException("la vida máxima debe establecerse entre [0 - 100]");
         }
         this.vidaMaxima = vidaMaxima;
-        if(vidaActual <0 || vidaActual > vidaMaxima){
+        if (vidaActual < 0 || vidaActual > vidaMaxima) {
             throw new RuntimeException("Incoherencia!! La vida actual no puede superar la vida Máxima");
         }
         this.vidaActual = vidaActual;
@@ -39,7 +40,15 @@ public abstract class Personaje {
         return nombre;
     }
 
-    public void setNombre(String nombre) {
+    public void setNombre(String nombre) throws JuegoException {
+
+        if (nombre == null || nombre.trim().isEmpty()) {
+            throw new JuegoException("El nombre no puede estar vacío");
+        }
+        if(nombre.length() < 3 || nombre.length() >30){
+            throw new JuegoException("Debe ingresar un nombre válido");
+        }
+
         this.nombre = nombre;
     }
 
@@ -55,7 +64,11 @@ public abstract class Personaje {
         return fuerza;
     }
 
-    public void setFuerza(int fuerza) {
+    public void setFuerza(int fuerza) throws JuegoException {
+        if (fuerza < 0 || fuerza > 20) {
+            throw new JuegoException("La fuerza debe establecerse entre [0 - 20]");
+        }
+
         this.fuerza = fuerza;
     }
 
@@ -63,7 +76,10 @@ public abstract class Personaje {
         return inteligencia;
     }
 
-    public void setInteligencia(int inteligencia) {
+    public void setInteligencia(int inteligencia) throws JuegoException {
+        if (inteligencia < 0 || inteligencia > 20) {
+            throw new JuegoException("La inteligencia debe establecerse entre [0 - 20]");
+        }
         this.inteligencia = inteligencia;
     }
 
@@ -71,7 +87,13 @@ public abstract class Personaje {
         return vidaMaxima;
     }
 
-    public void setVidaMaxima(int vidaMaxima) {
+    public void setVidaMaxima(int vidaMaxima) throws JuegoException {
+        if (vidaMaxima < 0 || vidaMaxima > 100) {
+            throw new JuegoException("La vida máxima debe estar entre [0 - 100]");
+        }
+        if (vidaActual > vidaMaxima) {
+            throw new JuegoException("Incoherencia!! La vida actual no puede superar la vida máxima");
+        }
         this.vidaMaxima = vidaMaxima;
     }
 
@@ -79,12 +101,15 @@ public abstract class Personaje {
         return vidaActual;
     }
 
-    public void setVidaActual(int vidaActual) {
+    public void setVidaActual(int vidaActual) throws JuegoException {
+        if (vidaActual < 0 || vidaActual > this.vidaMaxima) {
+            throw new JuegoException("Incoherencia!! La vida actual no puede ser menor a 0 ni mayor a la vida máxima");
+        }
         this.vidaActual = vidaActual;
     }
 
     @Override
     public String toString() {
-        return String.format("Nombre: %s | Raza: %s | Fuerza: %d | Inteligencia: %d | VidaMax: %d | VidaActual: %d ", nombre, raza,fuerza,inteligencia, vidaMaxima, vidaActual  );
+        return String.format("Nombre: %s | Raza: %s | Fuerza: %d | Inteligencia: %d | VidaMax: %d | VidaActual: %d ", nombre, raza, fuerza, inteligencia, vidaMaxima, vidaActual);
     }
 }
