@@ -1,4 +1,4 @@
 package com.example.models;
 
-public class Clerigos {
+public class Clerigo {
 }

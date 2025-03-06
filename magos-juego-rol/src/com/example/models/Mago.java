@@ -3,12 +3,14 @@ package com.example.models;
 import com.example.enums.TipoRaza;
 import com.example.utils.JuegoException;
 
+import java.util.Arrays;
 
-public class Magos extends Personaje {
+
+public class Mago extends Personaje {
 
     private String[] listaHechizos;
 
-    public Magos(String nombre, TipoRaza raza, int fuerza, int inteligencia, int vidaMaxima, int vidaActual) throws JuegoException {
+    public Mago(String nombre, TipoRaza raza, int fuerza, int inteligencia, int vidaMaxima, int vidaActual) throws JuegoException {
         super(nombre, raza, fuerza, inteligencia, vidaMaxima, vidaActual);
         this.listaHechizos = new String[4];
     }
@@ -64,11 +66,37 @@ public class Magos extends Personaje {
     }
 
 
-    public void lanzaHechizo(Personaje p, String listaHechizos) throws JuegoException {
+    public void lanzaHechizo(Personaje p, String hechizo) throws JuegoException {
         if (p.getVidaActual() > 0) {
-            setVidaActual(getVidaActual() - 10);
+            p.setVidaActual(p.getVidaActual() - 10);
         }
+
+        // agregando un control
+
+        if (p.getVidaActual() < 0) {
+            p.setVidaActual(0); // con esto evitamos que la vida sea negativa
+        }
+
+        // este metodo tiene ingresar n la bolsa de hechizos y eliminar(gastar) el hechizo lanzado
+
+        boolean hechizoLanzado = false;
+
+        for (int i = 0; i < listaHechizos.length; i++) {
+            if (listaHechizos[i] != null && listaHechizos[i].equalsIgnoreCase(hechizo)) {
+                listaHechizos[i] = null; // → donde encuantra la conincidencia agrega un null
+                hechizoLanzado = true;
+                break;// → sale del bucle;
+            }
+        }
+
+        if (!hechizoLanzado) {
+            throw new JuegoException("No se ha memorizado ese hechizo");
+        }
+
     }
 
-
+    @Override
+    public String toString() {
+        return super.toString() + "\n Hechizos Mago: "+ Arrays.toString(listaHechizos);
+    }
 }
