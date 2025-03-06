@@ -1,8 +1,9 @@
 package com.example.models;
 
 import com.example.enums.TipoRecinto;
+import com.example.interfaces.Construccion;
 
-public abstract class InstalacionDeportiva {
+public abstract class InstalacionDeportiva implements Construccion {
     private String nombreInstalacion;
     private TipoRecinto tipoRecinto;
     private double superficie;
