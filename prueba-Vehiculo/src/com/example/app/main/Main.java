@@ -61,6 +61,9 @@ public class Main {
 
     /**
      * Probabilidad carga.
+     *
+     * @param vehiculo the vehiculo
+     * @throws VehiculoException the vehiculo exception
      */
     public static void probarMobilidad(Vehiculo vehiculo) throws VehiculoException {
 
@@ -68,9 +71,15 @@ public class Main {
             mov.acelerar();
             mov.frenar();
         }
-        System.out.println("La operacion se ha realizado con éxito");
+        System.out.println("La operación se ha realizado con éxito");
     }
 
+    /**
+     * Probar carga descarga pasajero.
+     *
+     * @param vehiculo the vehiculo
+     * @throws VehiculoException the vehiculo exception
+     */
     public static void probarCargaDescargaPasajero(Vehiculo vehiculo) throws VehiculoException {
 
         if (vehiculo instanceof Recoger rec) {
