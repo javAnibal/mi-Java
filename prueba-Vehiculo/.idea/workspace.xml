@@ -5,21 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1b181eeb-b929-49f8-8060-065a27dd4d81" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/com/example/app/interfaces/Movible.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/example/app/interfaces/Recoger.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/example/app/main/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/example/app/models/Autobus.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/example/app/models/Bicicleta.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/example/app/models/Coche.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/example/app/models/Vehiculo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/example/app/utils/VehiculoException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../taller-Piezas/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../taller-Piezas/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../taller-Piezas/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../taller-Piezas/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../taller-Piezas/taller-Piezas.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../taller-Piezas/TallerPiezas/src/com/example/app/models/DiscoDuro.java" beforeDir="false" afterPath="$PROJECT_DIR$/../taller-Piezas/TallerPiezas/src/com/example/app/models/DiscoDuro.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../taller-Piezas/TallerPiezas/src/com/example/app/models/TurboCompresor.java" beforeDir="false" afterPath="$PROJECT_DIR$/../taller-Piezas/TallerPiezas/src/com/example/app/models/TurboCompresor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../parque-Atracciones/ParqueAtracciones/src/com/example/app/enums/TipoEntrada.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../parque-Atracciones/ParqueAtracciones/src/com/example/app/interfaz/Interactivo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../parque-Atracciones/ParqueAtracciones/src/com/example/app/interfaz/Operable.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../parque-Atracciones/ParqueAtracciones/src/com/example/app/models/AtracMecanica.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../parque-Atracciones/ParqueAtracciones/src/com/example/app/models/Atraccion.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../parque-Atracciones/ParqueAtracciones/src/com/example/app/models/Espectaculo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../parque-Atracciones/ParqueAtracciones/src/com/example/app/models/Visitante.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../parque-Atracciones/ParqueAtracciones/src/com/example/app/utils/AtraccionException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,9 +32,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 4
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 4
+}</component>
   <component name="ProjectId" id="2uAX7HPFdi9FahpbxWJxThngQvB" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -49,16 +43,17 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.Main.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "master",
-    "ignore.virus.scanning.warn.message": "true",
-    "onboarding.tips.debug.path": "G:/Mi unidad/2_Programaci-n/1_Java/prueba-Vehiculo/src/Main.java"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;G:/Mi unidad/ex-herencia-anibal&quot;,
+    &quot;onboarding.tips.debug.path&quot;: &quot;G:/Mi unidad/2_Programaci-n/1_Java/prueba-Vehiculo/src/Main.java&quot;
   }
-}]]></component>
+}</component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -75,6 +70,11 @@
       <option name="presentableId" value="Default" />
       <updated>1741692183767</updated>
       <workItem from="1741692184711" duration="3884000" />
+      <workItem from="1741763986891" duration="42000" />
+      <workItem from="1741764040607" duration="3000" />
+      <workItem from="1741764049680" duration="2000" />
+      <workItem from="1741770983681" duration="2000" />
+      <workItem from="1741771193902" duration="8000" />
     </task>
     <servers />
   </component>
